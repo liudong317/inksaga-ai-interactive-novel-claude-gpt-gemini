@@ -26,6 +26,14 @@ Keywords: `AI互动小说` · `AI游戏` · `claude-opus-4-8` · `gpt-5.5` · `d
 
 ---
 
+## 下载安装（Windows）
+
+**[v1.0.0 发布页](https://github.com/liudong317/inksaga-ai-interactive-novel-claude-gpt-gemini/releases/tag/v1.0.0)** 下载 **InkSaga Setup 1.0.0.exe**（Windows x64），双击安装即可使用。
+
+> 也可从下方克隆源码，自行 `npm install && npm start` 运行。
+
+---
+
 ## 快速开始
 
 ```bash
@@ -77,25 +85,30 @@ Model:    deepseek-v4-pro
 ## 打包
 
 ```bash
+# 发行版（含代码混淆，用于商业打包）
 npm run build
-# 开源版（无代码混淆）
+
+# 开源版（无混淆，推荐开源构建）
 npm run build:oss
 ```
 
-输出目录：`dist/`
+输出目录：`dist/`。官方 Windows 安装包见上方 [Releases](https://github.com/liudong317/inksaga-ai-interactive-novel-claude-gpt-gemini/releases)。
 
 ---
 
 ## 项目结构
 
 ```
+ver.json
 src/
 ├── main.js
 ├── renderer.js
 ├── assets/icons/
+├── components/
 ├── pages/
 ├── services/
 ├── prompts/
+├── utils/
 └── data/
 docs/
 └── screenshots/
