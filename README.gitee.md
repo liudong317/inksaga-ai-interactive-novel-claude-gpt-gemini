@@ -35,7 +35,7 @@
 ## 快速开始
 
 ```bash
-git clone https://gitee.com/liudong317/inksaga-ai-interactive-novel-claude-gpt-gemini.git
+git clone https://gitee.com/liudong59/inksaga-ai-interactive-novel-claude-gpt-gemini.git
 cd inksaga-ai-interactive-novel-claude-gpt-gemini
 npm install
 npm start
