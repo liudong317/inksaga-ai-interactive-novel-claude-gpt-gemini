@@ -2,6 +2,7 @@ node_modules/
 dist/
 src/backup_js/
 src/data/chat-history/
+src/data/game-progress.json
 *.log
 .DS_Store
 Thumbs.db
