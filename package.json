@@ -9,7 +9,7 @@
     "build:oss": "electron-builder --win --x64"
   },
   "keywords": ["ai-novel", "interactive-fiction", "openai-compatible", "claude", "gpt", "electron", "inksaga"],
-  "author": "",
+  "author": "liudong317",
   "license": "MIT",
   "repository": {
     "type": "git",

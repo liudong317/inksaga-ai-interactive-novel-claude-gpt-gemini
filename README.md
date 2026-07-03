@@ -1,10 +1,8 @@
-# InkSaga 墨叙 · AI互动小说桌面游戏 · Claude / GPT / Gemini via OpenAI-Compatible API
+# InkSaga 墨叙 · AI互动小说桌面游戏
 
-> 软件名称：**InkSaga 墨叙**（不变）  
-> 推荐 GitHub 仓库名：`inksaga-ai-interactive-novel-claude-gpt-gemini`  
-> 备选仓库名：`inksaga-ai-game-interactive-fiction`
+> 软件名称：**InkSaga 墨叙**
 
-**InkSaga 墨叙** 是一款完整的 AI 互动小说桌面应用——不是单脚本 Demo，而是包含角色配置、模型接入、剧情/事件编辑、实时 AI 对话与存档的全流程工具。
+**InkSaga 墨叙** 是一款 AI 互动小说桌面应用。配置角色与剧情，由大语言模型实时生成故事分支，支持多轮对话与记忆管理。
 
 Keywords: `AI互动小说` · `AI游戏` · `claude-opus-4-8` · `gpt-5.5` · `deepseek-v4-pro` · `glm-5.2` · `qwen3.7-max` · `OpenAI compatible` · `interactive fiction` · `electron`
 
@@ -37,12 +35,12 @@ npm install
 npm start
 ```
 
-### 推荐工作流
+### 使用流程
 
-1. **基本配置** → 填写角色与剧情描述  
-2. **模型配置** → 选择晴红API，填入 API Key，测试连接  
-3. **剧情配置 / 事件配置** → 完善场景与事件  
-4. **开始游戏** → 进入 AI 互动叙事  
+1. **基本配置** → 填写角色与剧情描述
+2. **模型配置** → 选择晴红API，填入 API Key，测试连接
+3. **剧情配置 / 事件配置** → 完善场景与事件
+4. **开始游戏** → 进入 AI 互动叙事
 
 ### 默认模型配置
 
@@ -72,21 +70,7 @@ Model:    deepseek-v4-pro
 | **API 文档 (Apifox)** | https://qinghongkeji.apifox.cn |
 | **模型与定价** | https://www.qinghong.tech/pricing |
 
-一个 Base URL 即可调用 Claude、GPT、Gemini、DeepSeek、GLM、Qwen — 只需切换模型名称。  
-应用内「模型配置」页也提供 **注册晴红API** 按钮，可直接跳转注册。
-
----
-
-## 与同类开源项目的区别
-
-| | 脚本型 Demo（如 LHB 分析器） | InkSaga 墨叙 |
-|---|:---:|:---:|
-| 形态 | 命令行脚本 | 完整 Electron 桌面应用 |
-| 交互 | 单次分析输出 | 多轮 AI 对话 + 记忆 |
-| 配置 | YAML 文件 | 可视化 GUI 全流程 |
-| 场景 | 垂直领域工具 | 通用 AI 互动小说引擎 |
-
-引流思路参考 [china-stock-lhb-claude-gpt-gemini](https://github.com/liudong317/china-stock-lhb-claude-gpt-gemini)（Keywords + API 表格 + 免责声明），但 README 与功能展示按 **AI 互动小说** 产品形态单独编写。
+一个 Base URL 即可调用 Claude、GPT、Gemini、DeepSeek、GLM、Qwen — 只需切换模型名称。
 
 ---
 
@@ -94,6 +78,8 @@ Model:    deepseek-v4-pro
 
 ```bash
 npm run build
+# 开源版（无代码混淆）
+npm run build:oss
 ```
 
 输出目录：`dist/`
@@ -106,20 +92,26 @@ npm run build
 src/
 ├── main.js
 ├── renderer.js
-├── assets/icons/        # 应用图标
-├── pages/               # 配置 / 模型 / 剧情 / 事件 / 游戏
-├── services/            # AI 对话、故事生成
-├── prompts/             # Prompt 模板
-└── data/                # 本地配置与存档
+├── assets/icons/
+├── pages/
+├── services/
+├── prompts/
+└── data/
 docs/
-└── screenshots/         # README 预览截图
+└── screenshots/
 ```
+
+---
+
+## 联系作者
+
+微信：`ziyouxiaoqi123`（备注来意：InkSaga咨询 / 定制开发 / 商务合作）
 
 ---
 
 ## 免责声明
 
-本仓库仅供 **个人学习、创意写作实验与 OpenAI 兼容 API 集成测试** 使用，**不构成任何投资建议或专业创作指导**。
+本仓库仅供 **个人学习、创意写作实验与 OpenAI 兼容 API 集成测试** 使用。
 
 - AI 生成内容可能存在偏差，请自行甄别。
 - [晴红API](https://www.qinghong.tech) 为独立第三方服务，需自行注册并遵守其条款。

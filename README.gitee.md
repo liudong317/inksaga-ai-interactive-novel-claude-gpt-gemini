@@ -1,11 +1,8 @@
 # InkSaga 墨叙 · AI互动小说桌面游戏
 
-> 软件名称：**InkSaga 墨叙**  
-> Gitee 仓库：`inksaga-ai-interactive-novel-claude-gpt-gemini`
+> 软件名称：**InkSaga 墨叙**
 
-**InkSaga 墨叙** 是一款完整的 AI 互动小说桌面应用——包含角色配置、模型接入、剧情/事件编辑、实时 AI 对话与存档的全流程工具。
-
-Keywords: `AI互动小说` · `AI游戏` · `claude-opus-4-8` · `gpt-5.5` · `OpenAI compatible` · `electron`
+**InkSaga 墨叙** 是一款 AI 互动小说桌面应用。配置角色与剧情，由大语言模型实时生成故事分支，支持多轮对话与记忆管理。
 
 ---
 
