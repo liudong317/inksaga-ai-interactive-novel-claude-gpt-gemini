@@ -23,6 +23,23 @@ const aboutModule = (function() {
     document.head.appendChild(style);
     container.innerHTML = htmlContent;
     loadVersion();
+
+    const copyBtn = document.getElementById('btnCopyWechat');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        const wechatId = document.getElementById('aboutWechatId')?.textContent || 'ziyouxiaoqi123';
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(wechatId).then(() => {
+            copyBtn.textContent = '已复制 ✓';
+            setTimeout(() => { copyBtn.textContent = '复制微信号'; }, 2000);
+          }).catch(() => {
+            copyBtn.textContent = wechatId;
+          });
+        } else {
+          copyBtn.textContent = wechatId;
+        }
+      });
+    }
   }
 
   return { render };
