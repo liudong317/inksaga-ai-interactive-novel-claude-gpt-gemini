@@ -31,7 +31,7 @@ Keywords: `AI互动小说` · `AI游戏` · `claude-opus-4-8` · `gpt-5.5` · `d
 ## 快速开始
 
 ```bash
-git clone https://github.com/your-username/inksaga-ai-interactive-novel-claude-gpt-gemini.git
+git clone https://github.com/liudong317/inksaga-ai-interactive-novel-claude-gpt-gemini.git
 cd inksaga-ai-interactive-novel-claude-gpt-gemini
 npm install
 npm start
