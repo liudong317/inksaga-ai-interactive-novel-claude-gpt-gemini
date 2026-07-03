@@ -28,7 +28,12 @@ Keywords: `AI互动小说` · `AI游戏` · `claude-opus-4-8` · `gpt-5.5` · `d
 
 ## 下载安装（Windows）
 
-**[v1.0.0 发布页](https://github.com/liudong317/inksaga-ai-interactive-novel-claude-gpt-gemini/releases/tag/v1.0.0)** 下载 **InkSaga Setup 1.0.0.exe**（Windows x64），双击安装即可使用。
+| 来源 | 下载 |
+|------|------|
+| **GitHub Release** | [v1.0.0 发布页](https://github.com/liudong317/inksaga-ai-interactive-novel-claude-gpt-gemini/releases/tag/v1.0.0) → **InkSaga Setup 1.0.0.exe** |
+| **码云 Release** | [v1.0.0 发布页](https://gitee.com/liudong59/inksaga-ai-interactive-novel-claude-gpt-gemini/releases/tag/v1.0.0) → **InkSaga Setup 1.0.0.exe** |
+
+Windows x64，双击安装即可。
 
 > 也可从下方克隆源码，自行 `npm install && npm start` 运行。
 

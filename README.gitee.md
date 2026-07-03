@@ -26,9 +26,12 @@
 
 ## 下载安装（Windows）
 
-**[GitHub v1.0.0 发布页](https://github.com/liudong317/inksaga-ai-interactive-novel-claude-gpt-gemini/releases/tag/v1.0.0)** 下载 **InkSaga Setup 1.0.0.exe**（Windows x64），双击安装即可。
+| 来源 | 下载 |
+|------|------|
+| **码云 Release** | [v1.0.0 发布页](https://gitee.com/liudong59/inksaga-ai-interactive-novel-claude-gpt-gemini/releases/tag/v1.0.0) → **InkSaga Setup 1.0.0.exe** |
+| **GitHub Release** | [v1.0.0 发布页](https://github.com/liudong317/inksaga-ai-interactive-novel-claude-gpt-gemini/releases/tag/v1.0.0) → **InkSaga Setup 1.0.0.exe** |
 
-> 码云 Releases 同步后将提供本镜像下载；目前请使用 GitHub 发布包。
+Windows x64，双击安装即可。也可从下方克隆源码自行运行。
 
 ---
 
