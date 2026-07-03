@@ -1,10 +1,8 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const fs = require('fs');
-const { callDeepSeek, cleanDeepSeekJSON } = require('./services/llm/deepseekHandler');
-const { callOllama, cleanOllamaJSON } = require('./services/llm/ollamaHandler');
-const { callSuanli, cleanSuanliJSON } = require('./services/llm/suanliHandler');
-const { callOpenAI, cleanOpenAIJSON } = require('./services/llm/openaiHandler');
+const { callOllama } = require('./services/llm/ollamaHandler');
+const { callOpenAI } = require('./services/llm/openaiHandler');
 
 let mainWindow = null;
 let splashWindow = null;
@@ -369,19 +367,16 @@ ipcMain.handle('get-ollama-models', async (event, baseUrl) => {
   }
 });
 
+async function invokeLLM(messages, provider, options = {}) {
+  if (provider.type === 'ollama') {
+    return await callOllama(messages, provider, options);
+  }
+  return await callOpenAI(messages, provider, options);
+}
+
 ipcMain.handle('test-llm-connection', async (event, { messages, provider }) => {
   try {
-    if (provider.type === 'deepseek') {
-      return await callDeepSeek(messages, provider);
-    } else if (provider.type === 'ollama') {
-      return await callOllama(messages, provider);
-    } else if (provider.type === 'suanli') {
-      return await callSuanli(messages, provider);
-    } else if (provider.type === 'openai') {
-      return await callOpenAI(messages, provider);
-    } else {
-      return { success: false, error: '不支持的提供商类型' };
-    }
+    return await invokeLLM(messages, provider);
   } catch (error) {
     return { success: false, error: error.message };
   }
@@ -389,17 +384,7 @@ ipcMain.handle('test-llm-connection', async (event, { messages, provider }) => {
 
 ipcMain.handle('call-llm', async (event, { messages, provider, options }) => {
   try {
-    if (provider.type === 'deepseek') {
-      return await callDeepSeek(messages, provider, options);
-    } else if (provider.type === 'ollama') {
-      return await callOllama(messages, provider, options);
-    } else if (provider.type === 'suanli') {
-      return await callSuanli(messages, provider, options);
-    } else if (provider.type === 'openai') {
-      return await callOpenAI(messages, provider, options);
-    } else {
-      return { success: false, error: '不支持的提供商类型' };
-    }
+    return await invokeLLM(messages, provider, options);
   } catch (error) {
     return { success: false, error: error.message };
   }
@@ -424,17 +409,7 @@ ipcMain.handle('chat-with-ai', async (event, messages) => {
     if (!provider || !provider.enabled) {
       return { success: false, error: '未启用LLM提供商' };
     }
-    if (provider.type === 'deepseek') {
-      return await callDeepSeek(messages, provider, { temperature: 0.8, max_tokens: 800 });
-    } else if (provider.type === 'ollama') {
-      return await callOllama(messages, provider, { temperature: 0.8, max_tokens: 800 });
-    } else if (provider.type === 'suanli') {
-      return await callSuanli(messages, provider, { temperature: 0.8, max_tokens: 800 });
-    } else if (provider.type === 'openai') {
-      return await callOpenAI(messages, provider, { temperature: 0.8, max_tokens: 800 });
-    } else {
-      return { success: false, error: '不支持的提供商类型' };
-    }
+    return await invokeLLM(messages, provider, { temperature: 0.8, max_tokens: 800 });
   } catch (error) {
     console.error('AI对话异常:', error);
     return { success: false, error: error.message };
@@ -460,17 +435,7 @@ ipcMain.handle('generate-story', async (event, prompt) => {
       return { success: false, error: '未启用LLM提供商' };
     }
     const messages = [{ role: 'user', content: prompt }];
-    if (provider.type === 'deepseek') {
-      return await callDeepSeek(messages, provider, { temperature: 0.7, max_tokens: 3000 });
-    } else if (provider.type === 'ollama') {
-      return await callOllama(messages, provider, { temperature: 0.7, max_tokens: 3000 });
-    } else if (provider.type === 'suanli') {
-      return await callSuanli(messages, provider, { temperature: 0.7, max_tokens: 3000 });
-    } else if (provider.type === 'openai') {
-      return await callOpenAI(messages, provider, { temperature: 0.7, max_tokens: 3000 });
-    } else {
-      return { success: false, error: '不支持的提供商类型' };
-    }
+    return await invokeLLM(messages, provider, { temperature: 0.7, max_tokens: 3000 });
   } catch (error) {
     console.error('故事生成异常:', error);
     return { success: false, error: error.message };

@@ -1,8 +1,4 @@
 const { ipcRenderer } = require('electron');
-const { cleanDeepSeekJSON } = require('./llm/deepseekHandler');
-const { cleanOllamaJSON } = require('./llm/ollamaHandler');
-const { cleanSuanliJSON } = require('./llm/suanliHandler');
-const { cleanOpenAIJSON } = require('./llm/openaiHandler');
 const promptLoader = require('./promptLoader');
 const memoryManager = require('./memoryManager');
 

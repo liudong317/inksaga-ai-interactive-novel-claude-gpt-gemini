@@ -1,7 +1,5 @@
 const { ipcRenderer } = require('electron');
-const { cleanDeepSeekJSON } = require('./llm/deepseekHandler');
 const { cleanOllamaJSON } = require('./llm/ollamaHandler');
-const { cleanSuanliJSON } = require('./llm/suanliHandler');
 const { cleanOpenAIJSON } = require('./llm/openaiHandler');
 const promptLoader = require('./promptLoader');
 
@@ -38,14 +36,8 @@ const storyGenerator = (function() {
         
         let jsonStr = result.content.trim();
         
-        if (providerType === 'deepseek') {
-          jsonStr = cleanDeepSeekJSON(jsonStr);
-        } else if (providerType === 'ollama') {
+        if (providerType === 'ollama') {
           jsonStr = cleanOllamaJSON(jsonStr);
-        } else if (providerType === 'suanli') {
-          jsonStr = cleanSuanliJSON(jsonStr);
-        } else if (providerType === 'openai') {
-          jsonStr = cleanOpenAIJSON(jsonStr);
         } else {
           jsonStr = cleanOpenAIJSON(jsonStr);
         }

@@ -73,42 +73,7 @@ const modelModule = (function() {
         <p style="color: #ff9800; font-size: 13px; margin-top: 5px;">⚠️ 启用此提供商将自动禁用其他所有提供商（同时只能启用一个）</p>
       </div>
     `;
-    if (provider.type === 'deepseek') {
-      formHTML += `
-        <div class="form-group">
-          <label class="form-label">API Key <span style="color: red;">*</span></label>
-          <input type="password" class="form-input" id="provider-apikey" value="${provider.apiKey || ''}" placeholder="输入DeepSeek API Key" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Base URL</label>
-          <input type="text" class="form-input" id="provider-baseurl" value="${provider.baseUrl || 'https://api.deepseek.com'}" placeholder="API基础URL" readonly style="background: #f5f5f5;">
-          <p style="color: #666; font-size: 12px; margin-top: 5px;">💡 DeepSeek官方API地址，无需修改</p>
-        </div>
-        <div class="form-group">
-          <label class="form-label">模型选择 <span style="color: red;">*</span></label>
-          <select class="form-select" id="provider-model">
-            <option value="deepseek-chat" ${provider.model === 'deepseek-chat' ? 'selected' : ''}>deepseek-chat（非思考模式）</option>
-            <option value="deepseek-reasoner" ${provider.model === 'deepseek-reasoner' ? 'selected' : ''}>deepseek-reasoner（思考模式）</option>
-          </select>
-          <p style="color: #666; font-size: 12px; margin-top: 5px;">💡 思考模式会输出推理过程，适合复杂任务</p>
-        </div>
-      `;
-    } else if (provider.type === 'suanli') {
-      formHTML += `
-        <div class="form-group">
-          <label class="form-label">API Key <span style="color: red;">*</span></label>
-          <input type="password" class="form-input" id="provider-apikey" value="${provider.apiKey || ''}" placeholder="输入算力云API Key" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Base URL</label>
-          <input type="text" class="form-input" id="provider-baseurl" value="${provider.baseUrl || 'https://api.suanli.cn/v1'}" placeholder="API基础URL">
-        </div>
-        <div class="form-group">
-          <label class="form-label">模型名称 <span style="color: red;">*</span></label>
-          <input type="text" class="form-input" id="provider-model" value="${provider.model || ''}" placeholder="模型名称（必填）" required>
-        </div>
-      `;
-    } else if (provider.type === 'openai') {
+    if (provider.type === 'openai') {
       const isQinghong = provider.baseUrl && provider.baseUrl.includes('qinghong.tech');
       const baseUrlReadonly = isQinghong ? 'readonly style="background: #f5f5f5;"' : '';
       const baseUrlHint = isQinghong
@@ -282,52 +247,7 @@ const modelModule = (function() {
       const apikeyInput = document.getElementById('provider-apikey');
       const baseurlInput = document.getElementById('provider-baseurl');
       const modelInput = document.getElementById('provider-model');
-      if (provider.type === 'deepseek') {
-        if (apikeyInput) {
-          const apiKey = apikeyInput.value.trim();
-          if (isEnabled && !apiKey) {
-            modalComponent.showError('DeepSeek API Key为必填项');
-            return;
-          }
-          updates.apiKey = apiKey;
-        }
-        if (baseurlInput) {
-          updates.baseUrl = baseurlInput.value.trim() || 'https://api.deepseek.com';
-        }
-        if (modelInput) {
-          const model = modelInput.tagName === 'SELECT' ? modelInput.value : modelInput.value.trim();
-          if (isEnabled && !model) {
-            modalComponent.showError('请选择模型');
-            return;
-          }
-          updates.model = model;
-        }
-      } else if (provider.type === 'suanli') {
-        if (apikeyInput) {
-          const apiKey = apikeyInput.value.trim();
-          if (isEnabled && !apiKey) {
-            modalComponent.showError('算力云API Key为必填项');
-            return;
-          }
-          updates.apiKey = apiKey;
-        }
-        if (baseurlInput) {
-          const baseUrl = baseurlInput.value.trim();
-          if (isEnabled && !baseUrl) {
-            modalComponent.showError('Base URL为必填项');
-            return;
-          }
-          updates.baseUrl = baseUrl;
-        }
-        if (modelInput) {
-          const model = modelInput.value.trim();
-          if (isEnabled && !model) {
-            modalComponent.showError('模型名称为必填项');
-            return;
-          }
-          updates.model = model;
-        }
-      } else if (provider.type === 'openai') {
+      if (provider.type === 'openai') {
         if (baseurlInput) {
           const baseUrl = baseurlInput.value.trim();
           if (isEnabled && !baseUrl) {
