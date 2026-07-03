@@ -1,0 +1,29 @@
+<div class="page-card">
+  <h2 class="page-title">模型配置</h2>
+
+  <div class="qinghong-promo">
+    <div class="qinghong-promo-header">
+      <span class="qinghong-promo-badge">OpenAI 兼容</span>
+      <span class="qinghong-promo-title">晴红AI 中转站</span>
+    </div>
+    <p class="qinghong-promo-desc">一个接口调用 Claude · GPT · Gemini · DeepSeek · GLM · Qwen，切换模型即可</p>
+    <div class="qinghong-promo-btns">
+      <button class="btn btn-promo" data-qh-link="home">晴红AI 官网</button>
+      <button class="btn btn-promo-accent" data-qh-link="signup">注册 API Key</button>
+      <button class="btn btn-promo-outline" data-qh-link="docs">API 文档</button>
+      <button class="btn btn-promo-outline" data-qh-link="pricing">模型定价</button>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">LLM提供商</label>
+    <select id="llm-provider" class="form-select">
+      <option value="">选择LLM提供商...</option>
+    </select>
+  </div>
+  <div id="llm-config-form"></div>
+  <div class="btn-group">
+    <button class="btn btn-primary" id="btn-save-llm">保存配置</button>
+    <button class="btn btn-success" id="btn-test-llm">测试连接</button>
+  </div>
+</div>

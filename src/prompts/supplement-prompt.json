@@ -1,0 +1,36 @@
+{
+  "name": "补充生成提示词",
+  "description": "当初次生成的角色或事件数量不足时，用于补充生成的提示词",
+  "content": {
+    "intro": "继续生成{category}类型故事的内容。",
+    "sections": {
+      "existing_content": {
+        "name": "已有内容",
+        "fields": [
+          "故事大纲：{outline}",
+          "已有角色：{characters}",
+          "已有事件数：{eventCount}个"
+        ]
+      },
+      "supplement_needed": {
+        "name": "需要补充",
+        "character_template": "还需要{missingCharacters}个角色（总共{totalCharacters}个）",
+        "event_template": "还需要{missingEvents}个事件（总共{totalEvents}个）"
+      },
+      "requirements": {
+        "name": "严格要求",
+        "rules": [
+          "全部使用中文，不能有任何英文单词",
+          "补充的角色：角色类型为配角，role字段必须是配角；性别写男或女，不能写玩家；姓名必须符合故事背景，不能使用现代简称；职位必须符合故事背景；每个角色有职位、性格、语气、定位；personality和tone字段的值结尾不能有逗号",
+          "补充的事件：事件类型用中文；时间线用中文；内容150-200字，纯中文；包含参与角色姓名",
+          "直接返回JSON格式，只包含需要补充的内容"
+        ]
+      },
+      "output_format": {
+        "name": "JSON格式（纯中文）",
+        "template": "{\n  \"characters\": [补充的角色列表],\n  \"events\": [补充的事件列表]\n}"
+      }
+    }
+  }
+}
+

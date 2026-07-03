@@ -1,0 +1,11 @@
+node_modules/
+dist/
+src/backup_js/
+src/data/chat-history/
+*.log
+.DS_Store
+Thumbs.db
+*.exe
+*.zip
+.env
+.env.local

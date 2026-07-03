@@ -1,0 +1,43 @@
+{
+  "currentProvider": "qinghong",
+  "connectionStatus": {
+    "connected": false,
+    "lastTestTime": null,
+    "provider": null
+  },
+  "providers": {
+    "qinghong": {
+      "name": "晴红API",
+      "type": "openai",
+      "enabled": true,
+      "apiKey": "YOUR_API_KEY_HERE",
+      "baseUrl": "https://www.qinghong.tech/v1",
+      "model": "deepseek-v4-pro",
+      "temperature": 0.7,
+      "models": [
+        "glm-5.2",
+        "deepseek-v4-pro",
+        "qwen3.7-max",
+        "gpt-5.5",
+        "claude-opus-4-8"
+      ]
+    },
+    "custom_openai": {
+      "name": "自定义 OpenAI 接口",
+      "type": "openai",
+      "enabled": false,
+      "apiKey": "",
+      "baseUrl": "",
+      "model": "",
+      "temperature": 0.7
+    },
+    "ollama": {
+      "name": "Ollama 本地模型",
+      "type": "ollama",
+      "enabled": false,
+      "baseUrl": "http://localhost:11434",
+      "model": "",
+      "temperature": 0.7
+    }
+  }
+}

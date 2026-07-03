@@ -1,0 +1,87 @@
+<div class="page-card">
+  <h2 class="page-title">基本配置</h2>
+  
+  <div class="form-row">
+    <div class="form-group form-col-2">
+      <label class="form-label">我的姓名</label>
+      <input type="text" id="configName" class="form-input" placeholder="请输入姓名">
+    </div>
+    <div class="form-group form-col-2">
+      <label class="form-label">我的性别</label>
+      <select id="configGender" class="form-select">
+        <option value="">请选择性别</option>
+        <option value="男">男</option>
+        <option value="女">女</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group form-col-2">
+      <label class="form-label">剧情类别</label>
+      <select id="configCategory" class="form-select">
+        <option value="都市">都市</option>
+        <option value="玄幻">玄幻</option>
+        <option value="仙侠">仙侠</option>
+        <option value="历史">历史</option>
+        <option value="科幻">科幻</option>
+        <option value="武侠">武侠</option>
+        <option value="悬疑">悬疑</option>
+        <option value="军事">军事</option>
+        <option value="现实">现实</option>
+        <option value="游戏">游戏</option>
+        <option value="奇幻">奇幻</option>
+        <option value="言情">言情</option>
+        <option value="穿越">穿越</option>
+        <option value="重生">重生</option>
+        <option value="灵异">灵异</option>
+        <option value="校园">校园</option>
+        <option value="娱乐圈">娱乐圈</option>
+        <option value="豪门">豪门</option>
+        <option value="末世">末世</option>
+        <option value="网游">网游</option>
+      </select>
+    </div>
+    <div class="form-group form-col-2">
+      <label class="form-label">游戏人数</label>
+      <select id="configPlayerCount" class="form-select">
+        <option value="3">3人</option>
+        <option value="5" selected>5人</option>
+        <option value="9">9人</option>
+        <option value="12">12人</option>
+        <option value="15">15人</option>
+        <option value="20">20人</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group form-col-1">
+      <label class="form-label">剧情事件数量</label>
+      <select id="configEventCount" class="form-select">
+        <option value="10" selected>10个事件</option>
+        <option value="20">20个事件</option>
+        <option value="30">30个事件</option>
+        <option value="50">50个事件</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">剧情描述</label>
+    <textarea id="configDescription" class="form-textarea" placeholder="请输入大概的剧情描述，例如：主角穿越到唐朝，成为李世民的谋士..."></textarea>
+  </div>
+
+  <div class="config-tip">
+    💡 开始游戏前需配置 AI 模型。推荐使用 <strong>晴红API</strong>，
+    <button type="button" class="inline-link-btn" data-qh-link="signup">注册 API Key</button>
+    或前往 <button type="button" class="inline-link-btn" id="gotoModelFromConfig">模型配置</button> 完成连接。
+  </div>
+
+  <div class="btn-group">
+    <button class="btn btn-primary" id="saveConfigBtn">保存配置</button>
+    <button class="btn btn-danger" id="clearConfigBtn">清理配置</button>
+    <button class="btn btn-success" id="startGameBtn">开始游戏</button>
+  </div>
+</div>
+

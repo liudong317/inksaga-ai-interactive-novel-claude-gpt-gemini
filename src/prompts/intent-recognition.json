@@ -1,0 +1,35 @@
+{
+  "name": "玩家意图识别规则",
+  "description": "根据玩家的语气和用词判断意图类型",
+  "content": {
+    "firm_action": {
+      "name": "坚定完成型",
+      "priority": "最高优先级",
+      "characteristics": "完成时态、肯定语气",
+      "keywords": ["我杀了", "我完成了", "已经XXX了", "XXX成功了", "XXX死了"],
+      "handling": "无条件承认成功，立即标记【状态变化：XXX】"
+    },
+    "command_action": {
+      "name": "命令执行型",
+      "priority": "高优先级",
+      "characteristics": "命令语气、强烈意愿",
+      "keywords": ["我要", "必须", "立刻", "马上", "给我", "去做"],
+      "handling": "行动成功，标记【状态变化：XXX】"
+    },
+    "try_action": {
+      "name": "尝试探索型",
+      "priority": "中优先级",
+      "characteristics": "不确定语气",
+      "keywords": ["试试", "能不能", "也许", "可能"],
+      "handling": "可成功可失败，根据剧情合理性"
+    },
+    "inquiry_dialogue": {
+      "name": "询问对话型",
+      "priority": "低优先级",
+      "characteristics": "疑问语气",
+      "keywords": ["吗", "呢", "什么", "怎么", "为什么"],
+      "handling": "角色回答"
+    }
+  }
+}
+
